@@ -6,6 +6,7 @@ from infraestructure.get_filters_options import get_filters_options
 from infraestructure.get_sliders_options import get_sliders_options
 from infraestructure.filter_dataset import filter_dataset
 from infraestructure.get_metrics import get_metrics
+from infraestructure.save_top_five import save_top_five
 
 # Presentation
 import presentation.set_page_config
@@ -14,6 +15,11 @@ from presentation.show_title import show_title
 from presentation.create_multiselect_filters import create_multiselect_filters
 from presentation.create_sliders import create_sliders
 from presentation.show_metrics import show_metrics
+from presentation.show_charts import show_all_charts
+from presentation.show_summary_stats import show_summary_stats
+from presentation.show_download_top_five import show_download_top_five
+
+show_title()
 
 df = get_dataframe()
 
@@ -41,7 +47,13 @@ df = filter_dataset( {
 
 show_dataset( df )
 
-show_title()
-
 metrics = get_metrics( df )
 show_metrics( metrics )
+
+show_all_charts( df )
+
+show_summary_stats( df )
+
+save_top_five( df )
+
+show_download_top_five( df )

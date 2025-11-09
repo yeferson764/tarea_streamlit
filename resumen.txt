@@ -1,0 +1,15 @@
+| Nº | Requisito                                                      | Ubicación / Archivo                                                      |
+| -- | -------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| 1  | Agregar columnas al Excel (Edad, Peso, IMC, Clasificación IMC) | `infraestructure/add_columns.py`                                         |
+| 2  | Llevar la columna Estatura a centímetros                       | `add_columns.py`                                                         |
+| 3  | Mostrar el archivo de Excel                                    | `presentation/show_dataset.py`                                           |
+| 4  | Filtros Multiselect: RH, Color Cabello, Barrio                 | `presentation/create_multiselect_filters.py`                             |
+| 5  | Sliders: rango Edad y Estatura                                 | `presentation/create_sliders.py`                                         |
+| 6  | Título: “Dashboard Estudiantil – Grupo xxx”                    | `presentation/show_title.py`                                             |
+| 7  | Métricas: Total, Edad Promedio, Estatura, Peso, IMC            | `infraestructure/get_metrics.py` + `presentation/show_metrics.py`        |
+| 8  | Fila 1: Barras por Edad, Torta por Sangre                      | `presentation/show_charts.py`                                            |
+| 9  | Fila 2: Scatter Estatura vs Peso, Barras por Cabello           | `presentation/show_charts.py`                                            |
+| 10 | Fila 3: Línea por Talla Zapatos, Barras Top 10 Barrios         | `presentation/show_charts.py`                                            |
+| 11 | Top 5 Mayor Estatura y Mayor Peso                              | `infraestructure/save_top_five.py` + `presentation/download_top_five.py` |
+| 12 | Resumen estadístico (Estatura, Peso, IMC)                      | `presentation/show_summary_stats.py`                                     |
+| 13 | Filtro adicional: Integrantes del grupo                        | `presentation/create_multiselect_filters.py` (filtro “Estudiantes”)      |
