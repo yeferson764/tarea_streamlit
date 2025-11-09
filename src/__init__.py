@@ -6,6 +6,9 @@ from infraestructure.get_filters_options import get_filters_options
 from infraestructure.get_sliders_options import get_sliders_options
 from infraestructure.filter_dataset import filter_dataset
 from infraestructure.get_metrics import get_metrics
+from infraestructure.get_charts_data import get_charts_data
+from infraestructure.get_top_5 import get_top_5
+from infraestructure.get_statistical_summary import get_statistical_summary
 
 # Presentation
 import presentation.set_page_config
@@ -14,6 +17,9 @@ from presentation.show_title import show_title
 from presentation.create_multiselect_filters import create_multiselect_filters
 from presentation.create_sliders import create_sliders
 from presentation.show_metrics import show_metrics
+from presentation.show_charts import show_charts
+from presentation.export_top_5 import export_top_5
+from presentation.show_statistical_summary import show_statistical_summary
 
 df = get_dataframe()
 
@@ -39,9 +45,21 @@ df = filter_dataset( {
     'selected_height': selected_height
 }, df )
 
-show_dataset( df )
-
 show_title()
+
+show_dataset( df )
 
 metrics = get_metrics( df )
 show_metrics( metrics )
+
+# graficos filas 1, 2 y 3
+charts_data = get_charts_data(df, age_bins=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+show_charts(charts_data)
+
+# top 5
+top_5_data = get_top_5(df)
+export_top_5(top_5_data)
+
+# resumen estadístico
+statistical_summary = get_statistical_summary(df)
+show_statistical_summary(statistical_summary)
