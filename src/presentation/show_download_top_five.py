@@ -10,16 +10,16 @@ def show_download_top_five(df: pd.DataFrame):
     top_peso = df.nlargest(5, "Peso")[["Código", "Nombre_Estudiante", "Apellido_Estudiante", "Peso", "Estatura_CM", "IMC"]]
 
     # Mostrar tablas previas
-    #col1, col2 = st.columns(2)
-    #with col1:
-    #    st.markdown("**🏆 Top 5 por Estatura (cm)**")
-    #    st.dataframe(top_estatura, width="content")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("**🏆 Top 5 por Estatura (cm)**")
+        st.dataframe(top_estatura, width="content")
 
-    #with col2:
-    #    st.markdown("**🏋️‍♂️ Top 5 por Peso (kg)**")
-    #    st.dataframe(top_peso, width="content")
+    with col2:
+        st.markdown("**🏋️‍♂️ Top 5 por Peso (kg)**")
+        st.dataframe(top_peso, width="content")
 
-    #st.markdown("### Descargar Archivos Excel")
+    st.markdown("### Descargar Archivos Excel")
 
     # Convertir a Excel en memoria
     def to_excel_bytes(dataframe):
